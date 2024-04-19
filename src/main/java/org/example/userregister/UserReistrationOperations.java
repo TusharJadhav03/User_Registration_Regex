@@ -38,7 +38,7 @@ public class UserReistrationOperations {
     public void Email(){
         System.out.println("Enter a Email : ");
         String email = sc.nextLine();
-        Pattern pattern = Pattern.compile("^[a-z0-9.]+@[a-z]+.[a-z]{2,}.[a-z]{2,}");
+        Pattern pattern = Pattern.compile("^[a-z0-9+.-]+@[a-z0-9]*.[a-z.]{2,}[a-z]{2,}$");
         Matcher matcher = pattern.matcher(email);
 
         boolean checkValid = matcher.matches();
@@ -67,8 +67,8 @@ public class UserReistrationOperations {
         System.out.println("Enter a Password : ");
         String password = sc.next();
         Pattern pattern = Pattern.compile("^(?=.*[A-Z]{1,})(?=.*[0-9]{1,}).*[a-z](?=.*[!@#$%&]{1})(.{7,})$");
-        Matcher matcher = pattern.matcher(password);
 
+        Matcher matcher = pattern.matcher(password);
         boolean checkValid = matcher.matches();
 
         if(checkValid)
