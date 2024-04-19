@@ -19,6 +19,19 @@ public class UserReistrationOperations {
             System.out.println("First Name is Validate Successfully");
         else
             System.out.println("First Name is Incorrect");
+    }
 
+    public void LastName(){
+        System.out.println("Enter a Last Name : ");
+        String last_name = sc.next();
+        Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-z]{2,}$");
+        Matcher matcher = pattern.matcher(last_name);
+
+        boolean checkValid = matcher.matches();
+
+        if(checkValid)
+            System.out.println("Last Name is Validate Successfully");
+        else
+            System.out.println("Last Name is Incorrect");
     }
 }

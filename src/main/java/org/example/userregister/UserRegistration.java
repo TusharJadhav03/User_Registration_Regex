@@ -11,12 +11,17 @@ public class UserRegistration {
         int num =1;
 
         while(num>0){
-            System.out.println("1.First Name Validation 0.Exit");
+            System.out.println("\n 1.First Name Validation \n 2.Last Name Validation \n 0.Exit");
             System.out.println("Enter your choice :");
             switch (sc.nextInt()){
                 case 1:
                     System.out.println("Welcome to First Name Validation");
                     uro.FirstName();
+                    break;
+
+                case 2:
+                    System.out.println("Welcome to Last Name Validation");
+                    uro.LastName();
                     break;
 
                 case 0:
