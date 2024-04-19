@@ -11,7 +11,7 @@ public class UserRegistration {
         int num =1;
 
         while(num>0){
-            System.out.println("\n 1.First Name Validation \n 2.Last Name Validation \n 3.Email Validation \n 0.Exit");
+            System.out.println("\n 1.First Name Validation \n 2.Last Name Validation \n 3.Email Validation \n 4.Mobile Number Validation \n 0.Exit");
             System.out.println("Enter your choice :");
             switch (sc.nextInt()){
                 case 1:
@@ -27,6 +27,11 @@ public class UserRegistration {
                 case 3:
                     System.out.println("Welcome to Email Validation");
                     uro.Email();
+                    break;
+
+                case 4:
+                    System.out.println("Welcome to Mobile Number Validation");
+                    uro.MobileNumber();
                     break;
 
                 case 0:
