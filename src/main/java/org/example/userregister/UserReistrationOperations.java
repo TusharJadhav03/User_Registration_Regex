@@ -38,7 +38,7 @@ public class UserReistrationOperations {
     public void Email(){
         System.out.println("Enter a Email : ");
         String email = sc.nextLine();
-        Pattern pattern = Pattern.compile("^[a-z0-9.]+@[a-z]+.[a-z]{2,}.[a-z]{2,}$");
+        Pattern pattern = Pattern.compile("^[a-z0-9.]+@[a-z]+.[a-z]{2,}.[a-z]{2,}");
         Matcher matcher = pattern.matcher(email);
 
         boolean checkValid = matcher.matches();
@@ -50,7 +50,7 @@ public class UserReistrationOperations {
         }
 
     public void MobileNumber(){
-        System.out.println("Enter a Mobile Number");
+        System.out.println("Enter a Mobile Number : ");
         String mobile_number = sc.nextLine();
         Pattern pattern = Pattern.compile("^[0-9]{2} \\d{10}$");
         Matcher matcher = pattern.matcher(mobile_number);
@@ -63,6 +63,19 @@ public class UserReistrationOperations {
             System.out.println("Mobile Number is Incorrect");
         }
 
+    public void Password(){
+        System.out.println("Enter a Password : ");
+        String password = sc.next();
+        Pattern pattern = Pattern.compile("^[a-z]{8,}$");
+        Matcher matcher = pattern.matcher(password);
 
+        boolean checkValid = matcher.matches();
+
+        if(checkValid)
+            System.out.println("Password is Valid Successfully");
+        else
+            System.out.println("Password is Invalid ");
     }
+
+}
 
