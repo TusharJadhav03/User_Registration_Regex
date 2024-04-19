@@ -34,4 +34,20 @@ public class UserReistrationOperations {
         else
             System.out.println("Last Name is Incorrect");
     }
-}
+
+    public void Email(){
+        System.out.println("Enter a Email : ");
+        String email = sc.nextLine();
+        Pattern pattern = Pattern.compile("^[a-z0-9.]+@[a-z]+.[a-z]{2,}.[a-z]{2,}$");
+        Matcher matcher = pattern.matcher(email);
+
+        boolean checkValid = matcher.matches();
+
+        if(checkValid)
+            System.out.println("Email is Valid Successfully");
+        else
+            System.out.println("Email is Incorrect");
+        }
+
+    }
+
