@@ -7,9 +7,8 @@ import java.util.regex.Pattern;
 public class UserReistrationOperations {
 
     Scanner sc = new Scanner(System.in);
-    public void FirstName(){
-        System.out.println("Enter a First Name : ");
-        String first_name = sc.next();
+    public boolean FirstName(String first_name){
+
         Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-z]{2,}$");
         Matcher matcher = pattern.matcher(first_name);
 
@@ -19,11 +18,11 @@ public class UserReistrationOperations {
             System.out.println("First Name is Validate Successfully");
         else
             System.out.println("First Name is Incorrect");
+        return checkValid;
     }
 
-    public void LastName(){
-        System.out.println("Enter a Last Name : ");
-        String last_name = sc.next();
+    public boolean LastName(String last_name){
+
         Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-z]{2,}$");
         Matcher matcher = pattern.matcher(last_name);
 
@@ -33,11 +32,11 @@ public class UserReistrationOperations {
             System.out.println("Last Name is Validate Successfully");
         else
             System.out.println("Last Name is Incorrect");
+        return checkValid;
     }
 
-    public void Email(){
-        System.out.println("Enter a Email : ");
-        String email = sc.nextLine();
+    public boolean Email(String email){
+
         Pattern pattern = Pattern.compile("^[a-z0-9+.-]+@[a-z0-9]*.[a-z.]{2,}[a-z]{2,}$");
         Matcher matcher = pattern.matcher(email);
 
@@ -47,11 +46,11 @@ public class UserReistrationOperations {
             System.out.println("Email is Valid Successfully");
         else
             System.out.println("Email is Incorrect");
+        return checkValid;
         }
 
-    public void MobileNumber(){
-        System.out.println("Enter a Mobile Number : ");
-        String mobile_number = sc.nextLine();
+    public boolean MobileNumber(String mobile_number){
+
         Pattern pattern = Pattern.compile("^[0-9]{2} \\d{10}$");
         Matcher matcher = pattern.matcher(mobile_number);
 
@@ -61,11 +60,11 @@ public class UserReistrationOperations {
             System.out.println("Mobile Number is Valid Successfully");
         else
             System.out.println("Mobile Number is Incorrect");
+        return checkValid;
         }
 
-    public void Password(){
-        System.out.println("Enter a Password : ");
-        String password = sc.next();
+    public boolean Password(String password){
+
         Pattern pattern = Pattern.compile("^(?=.*[A-Z]{1,})(?=.*[0-9]{1,}).*[a-z](?=.*[!@#$%&]{1})(.{7,})$");
 
         Matcher matcher = pattern.matcher(password);
@@ -75,6 +74,7 @@ public class UserReistrationOperations {
             System.out.println("Password is Valid Successfully");
         else
             System.out.println("Password is Invalid ");
+        return checkValid;
     }
 
 }

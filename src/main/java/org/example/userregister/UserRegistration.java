@@ -16,29 +16,39 @@ public class UserRegistration {
             switch (sc.nextInt()){
                 case 1:
                     System.out.println("Welcome to First Name Validation");
-                    uro.FirstName();
+                    System.out.println("Enter a First Name : ");
+                    String first_name = sc.next();
+                    uro.FirstName(first_name);
                     break;
 
                 case 2:
                     System.out.println("Welcome to Last Name Validation");
-                    uro.LastName();
+                    System.out.println("Enter a Last Name : ");
+                    String last_name = sc.next();
+                    uro.LastName(last_name);
                     break;
 
                 case 3:
                     System.out.println("Welcome to Email Validation");
+                    System.out.println("Enter a Email : ");
+                    String email = sc.nextLine();
                     for(int i=0; i<=9;i++) {
-                        uro.Email();
+                        uro.Email(email);
                     }
                     break;
 
                 case 4:
                     System.out.println("Welcome to Mobile Number Validation");
-                    uro.MobileNumber();
+                    System.out.println("Enter a Mobile Number : ");
+                    String mobile_number = sc.nextLine();
+                    uro.MobileNumber(mobile_number);
                     break;
 
                 case 5:
                     System.out.println("Welcome to Password Validation");
-                    uro.Password();
+                    System.out.println("Enter a Password : ");
+                    String password = sc.next();
+                    uro.Password(password);
                     break;
 
                 case 0:
