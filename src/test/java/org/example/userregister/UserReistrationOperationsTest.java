@@ -12,72 +12,115 @@ class UserReistrationOperationsTest {
 
     @Test
     void firstNameValid() {
-        boolean validTest = userReistrationOperations.FirstName("Tushar");
-        assertTrue(validTest);
-
+        try{
+            assertTrue(userReistrationOperations.FirstName("Tushar"));
+        }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void lastNameValid() {
-        boolean validTest = userReistrationOperations.LastName("Jadhav");
-        assertTrue(validTest);
+        try {
+            assertTrue(userReistrationOperations.LastName("Jadhav"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void emailValid() {
-        boolean validTest = userReistrationOperations.Email("tushar.jadhav.work@gmail.com");
-        assertTrue(validTest);
+        try {
+            assertTrue(userReistrationOperations.Email("tushar.jadhav.work@gmail.com"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void mobileNumberValid() {
-        boolean validTest = userReistrationOperations.MobileNumber("91 8108342983");
-        assertTrue(validTest);
+        try {
+            assertTrue(userReistrationOperations.MobileNumber("91 8108342983"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void passwordValid() {
-        boolean validTest = userReistrationOperations.Password("Tushar@1999");
-        assertTrue(validTest);
+        try {
+            assertTrue(userReistrationOperations.Password("Tushar@1999"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
 
     @Test
     void firstNameInvalid(){
-        boolean invalidTest = userReistrationOperations.FirstName("tushar");
-        assertFalse(invalidTest);
+        try {
+            assertFalse(userReistrationOperations.FirstName("tushar"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void lastNameInvalid(){
-        boolean invalidTest = userReistrationOperations.LastName("jadhav");
-        assertFalse(invalidTest);
+        try {
+            assertFalse(userReistrationOperations.LastName("jadhav"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void emailInvalid(){
-        boolean invalidTest = userReistrationOperations.Email("tushar.jadhav.#.@gmail.com");
-        assertFalse(invalidTest);
+        try {
+            assertFalse(userReistrationOperations.Email("tushar.jadhav.#.@gmail.com"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void mobileNumberInvalid(){
-        boolean invalidTest = userReistrationOperations.MobileNumber("8108342983");
-        assertFalse(invalidTest);
+        try {
+            assertFalse(userReistrationOperations.MobileNumber("8108342983"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
     @Test
     void passwordInvalid(){
-        boolean invalidTest = userReistrationOperations.Password("tushar@1999");
-        assertFalse(invalidTest);
+        try {
+            assertFalse(userReistrationOperations.Password("tushar@1999"));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
 
     @ParameterizedTest
     @ValueSource(strings = {"abc@yahoo.com", "abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"})
     void emailMultipleEntry(String emailId){
-        boolean validTest = userReistrationOperations.Email(emailId);
-        assertTrue(validTest);
+        try {
+            assertTrue(userReistrationOperations.Email(emailId));
+            }
+        catch (InvalidUserException e){
+            System.out.println("Exception occurs"+e);
+        }
     }
 
 

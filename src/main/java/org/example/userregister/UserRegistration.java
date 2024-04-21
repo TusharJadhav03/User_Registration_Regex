@@ -6,14 +6,16 @@ public class UserRegistration {
     public static void main(String[] args) {
 
         UserReistrationOperations uro = new UserReistrationOperations();
+
+        try{
         Scanner sc = new Scanner(System.in);
         System.out.println("*** Welcome to User Registration ***");
         int num =1;
 
-        while(num>0){
+        while(num>0) {
             System.out.println("\n 1.First Name Validation \n 2.Last Name Validation \n 3.Email Validation \n 4.Mobile Number Validation \n 5.Password Validation \n 0.Exit");
             System.out.println("Enter your choice :");
-            switch (sc.nextInt()){
+            switch (sc.nextInt()) {
                 case 1:
                     System.out.println("Welcome to First Name Validation");
                     System.out.println("Enter a First Name : ");
@@ -32,7 +34,7 @@ public class UserRegistration {
                     System.out.println("Welcome to Email Validation");
                     System.out.println("Enter a Email : ");
                     String email = sc.nextLine();
-                    for(int i=0; i<=9;i++) {
+                    for (int i = 0; i <= 9; i++) {
                         uro.Email(email);
                     }
                     break;
@@ -53,7 +55,12 @@ public class UserRegistration {
 
                 case 0:
                     System.exit(0);
+                }
             }
+
+        }
+        catch (Exception e){
+            System.out.println("Invalid Input");
         }
     }
 }
