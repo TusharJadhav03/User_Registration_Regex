@@ -1,12 +1,12 @@
 package org.example.userregister;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserReistrationOperations {
 
-    Scanner sc = new Scanner(System.in);
+//    Scanner sc = new Scanner(System.in);
     public boolean FirstName(String first_name){
 
         Pattern pattern = Pattern.compile("^[A-Z]{1}+[a-z]{2,}$");
@@ -37,7 +37,7 @@ public class UserReistrationOperations {
 
     public boolean Email(String email){
 
-        Pattern pattern = Pattern.compile("^[a-z0-9+.-]+@[a-z0-9]*.[a-z.]{2,}[a-z]{2,}$");
+        Pattern pattern = Pattern.compile("^[a-z0-9+.-]+@[a-z0-9]*.[a-z.]{2,}[a-z]{2}$");
         Matcher matcher = pattern.matcher(email);
 
         boolean checkValid = matcher.matches();

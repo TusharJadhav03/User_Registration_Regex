@@ -1,6 +1,8 @@
 package org.example.userregister;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -69,4 +71,14 @@ class UserReistrationOperationsTest {
         boolean invalidTest = userReistrationOperations.Password("tushar@1999");
         assertFalse(invalidTest);
     }
+
+
+    @ParameterizedTest
+    @ValueSource(strings = {"abc@yahoo.com", "abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"})
+    void emailMultipleEntry(String emailId){
+        boolean validTest = userReistrationOperations.Email(emailId);
+        assertTrue(validTest);
+    }
+
+
 }
